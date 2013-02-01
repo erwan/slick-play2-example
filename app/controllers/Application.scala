@@ -2,6 +2,7 @@ package controllers
 
 import play.api._
 import play.api.mvc._
+import play.api.Play.current
 
 import scala.slick.driver.MySQLDriver.simple._
 import Database.threadLocalSession

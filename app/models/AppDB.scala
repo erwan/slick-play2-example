@@ -1,10 +1,14 @@
 package models
-import play.api.Play.current
+
+import play.api.Application
 
 import scala.slick.driver.MySQLDriver.simple._
 
 object AppDB {
 
-  lazy val db = Database.forURL("jdbc:mysql://127.0.0.1:3306/slick", "root", driver = "scala.slick.driver.MySQLDriver")
+  def db(implicit app: Application) = Database.forURL(
+    app.configuration.getString("db.default.url").getOrElse(sys.error("Missing key: db.default.url")),
+    app.configuration.getString("db.default.user").getOrElse(""),
+    driver = "scala.slick.driver.MySQLDriver")
 
 }
