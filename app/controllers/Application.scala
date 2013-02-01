@@ -4,10 +4,11 @@ import play.api._
 import play.api.mvc._
 import play.api.Play.current
 
-import scala.slick.driver.MySQLDriver.simple._
-import Database.threadLocalSession
 
 import models._
+import AppDB.simple._
+
+import Database.threadLocalSession
 
 object Application extends Controller {
 

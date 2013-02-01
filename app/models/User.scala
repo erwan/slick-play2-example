@@ -1,6 +1,6 @@
 package models
 
-import scala.slick.driver.H2Driver.simple._
+import AppDB.simple._
 
 case class User(id: Option[Int], name : String)
 
