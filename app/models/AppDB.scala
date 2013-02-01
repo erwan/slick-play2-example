@@ -1,17 +1,10 @@
 package models
 import play.api.Play.current
 
-/**
- * Created with IntelliJ IDEA.
- * User: gonto
- * Date: 11/23/12
- * Time: 10:14 PM
- * To change this template use File | Settings | File Templates.
- */
-object AppDB extends DBeable {
+import scala.slick.driver.MySQLDriver.simple._
 
-  lazy val database = getDb
-  lazy val dal = getDal
+object AppDB {
 
+  lazy val db = Database.forURL("jdbc:mysql://127.0.0.1:3306/slick", "root", driver = "scala.slick.driver.MySQLDriver")
 
 }
