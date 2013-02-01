@@ -6,7 +6,7 @@ import play.api.Application
 import slick.session.Session
 
 
-object Global extends GlobalSettings with DBeable{
+object Global extends GlobalSettings with DBeable {
 
   override def onStart(app: Application) {
     implicit val application = app
